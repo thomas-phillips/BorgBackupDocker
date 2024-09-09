@@ -1,0 +1,19 @@
+services:
+  borg:
+    build: .
+    # backup directories
+    volumes:
+      -
+    environment:
+      - BORG_REPO=
+      # passphrase in base64
+      - BORG_PASSPHRASE=
+      - TZ=
+      # space separated list of directories from root volume to backup
+      - BACKUP_PATHS=
+      - SSH_SERVER=
+      # private ssh key in base64
+      - SSH_PRIVATE_KEY=
+      # public ssh key in base64 to remotely connect to container
+      - SSH_DEVICE=
+
